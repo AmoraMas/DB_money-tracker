@@ -1,6 +1,16 @@
 const { Pool } = require('pg');
 const pool = require('./connDB');
 
+let count = 0;
+
+function checkComplete () {
+    count++;
+    if (count == 2) {
+        // close connection
+        pool.end();
+    }
+}
+
 // run seed SQL
 pool.query(`SELECT COUNT(*) FROM accounts`, (err, data) => {
     if (data.rows[0].count == 0) {
@@ -19,6 +29,7 @@ pool.query(`SELECT COUNT(*) FROM accounts`, (err, data) => {
             }
         );
     }
+    checkComplete();
 });
 
 pool.query(`SELECT COUNT(*) FROM deposits`, (err, data) => {
@@ -45,8 +56,5 @@ pool.query(`SELECT COUNT(*) FROM deposits`, (err, data) => {
         }
         );
     }
+    checkComplete();
 });
-
-
-// close connection
-pool.end();
