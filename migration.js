@@ -11,7 +11,7 @@ pool.query(`CREATE TABLE IF NOT EXISTS accounts (
         if (err){
             console.log("CREATE TABLE pets failed");
         } else {
-            console.log("pets table created sucessfully");
+            console.log("accounts table created sucessfully");
         }
     }
 );
@@ -27,7 +27,7 @@ pool.query(`CREATE TABLE IF NOT EXISTS deposits (
         if (err){
             console.log("CREATE TABLE pets failed");
         } else {
-            console.log("pets table created sucessfully");
+            console.log("deposits table created sucessfully");
         }
     }
 );

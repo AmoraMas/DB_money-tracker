@@ -7,11 +7,11 @@ pool.query(`SELECT COUNT(*) FROM accounts`, (err, data) => {
         pool.query(`INSERT INTO accounts (bank, type) VALUES 
             ('USAA', 'Checking'),
             ('USAA', 'Savings'),
-            ('Navy Federal', 'Checking')
-            ('Navy Federal', 'Savings')`, 
+            ('Navy Federal', 'Checking'),
+            ('Navy Federal', 'Savings')`,
             (err, data) => {
                 if (err){
-                    console.log("Insert failed");
+                    console.log("Insert failed (accounts)");
                 } else {
                     console.log(data);
                 }
@@ -27,8 +27,8 @@ pool.query(`SELECT COUNT(*) FROM deposits`, (err, data) => {
         (1, 102, 'SafeWay', '1 Mar 2023', 'Groceries'),
         (3, 133, 'WalMart', '1 Mar 2023', 'Groceries'),
         (3, 125, 'WalMart', '5 Mar 2023', 'Monirot'),
-        (3, 307, 'Best Buy', '1 Mar 2023', 'TV'),
-        (2, 10256, 'Sears', '1 Mar 2023', 'Renovation'),
+        (3, 207, 'Best Buy', '1 Mar 2023', 'TV'),
+        (2, 25, 'Sears', '1 Mar 2023', 'Tools'),
         (1, 56, 'Taco Palace', '1 Mar 2023', 'Dinner'),
         (1, 76, 'Chili', '3 Mar 2023', 'Dinner'),
         (1, 23, 'McDonalds', '5 Mar 2023', 'Lunch'),
@@ -36,7 +36,7 @@ pool.query(`SELECT COUNT(*) FROM deposits`, (err, data) => {
         (3, 75, 'Church', '1 Mar 2023', 'Tithe')`, 
         (err, data) => {
             if (err){
-                console.log("Insert failed");
+                console.log("Insert failed (deposits)");
             } else {
                 console.log(data);
             }
