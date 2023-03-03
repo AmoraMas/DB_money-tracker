@@ -1,23 +1,21 @@
 // define dependencies
 const { Pool } = require("pg");
-const cors = require("cors");
 const express = require("express");
+const cors = require("cors");
 const app = express();
 app.use(express.json());
 app.use(cors());
 //app.use(cors({ origin: '*' }));
 
+// define structure for accessing database
+// const DATABSE_URL = process.env.DATABASE_URL;
+const pool = require('./connDB');
+
+// serve your css as static
+app.use(express.static(__dirname));
+
 // define port number
 const port = 8000;
-
-// define structure for accessing database
-const pool = new Pool ({
-  user: 'postgres',
-  host: 'postgres-db',
-  database: 'money',
-  password: 'password',
-  port: 5432
-});
 
 // listen to the port
 app.listen(port, function () {
@@ -31,6 +29,14 @@ app.listen(port, function () {
 // test request to verify this file is working
 app.get("/api/test", (req, res, next) => {
   res.send('Programming is so awesome!');
+})
+
+// html page request to send index.html to the user
+app.get("/", (req, res, next) => {
+  res.sendFile(__dirname + "/index.html");
+})
+app.get("/index.html", (req, res, next) => {
+  res.sendFile(__dirname + "/index.html");
 })
 
 // return all entries for table accounts
