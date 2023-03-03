@@ -8,7 +8,7 @@ pool.query(`SELECT COUNT(*) FROM accounts`, (err, data) => {
             ('USAA', 'Checking'),
             ('USAA', 'Savings'),
             ('Navy Federal', 'Checking'),
-            ('Navy Federal', 'Savings')`,
+            ('Navy Federal', 'Savings');`,
             (err, data) => {
                 if (err){
                     console.log("Insert failed (accounts)");
@@ -33,7 +33,7 @@ pool.query(`SELECT COUNT(*) FROM deposits`, (err, data) => {
         (1, 76, 'Chili', '3 Mar 2023', 'Dinner'),
         (1, 23, 'McDonalds', '5 Mar 2023', 'Lunch'),
         (3, 16, 'Taco Bell', '2 Mar 2023', 'Lunch'),
-        (3, 75, 'Church', '1 Mar 2023', 'Tithe')`, 
+        (3, 75, 'Church', '1 Mar 2023', 'Tithe');`, 
         (err, data) => {
             if (err){
                 console.log("Insert failed (deposits)");
