@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script defer src="index.js"></script>
+    <title>Money DB Access</title>
+</head>
+
+<body>
+    <h1>Money Database Access</h1>
+    <form class="form">
+        <div class="question">
+            <label for "accountID">Account ID:</label>
+            <input type="text" id="accountID" name="accountID" />
+        </div>
+        <div class="question">
+            <label for "depositID">Deposit ID:</label>
+            <input type="text" id="depositID" name="depositID" />
+        </div>
+        <div class="question">
+            <label for "amount">Amount:</label>
+            <input type="text" id="amount" name="ammount" />
+        </div>
+        <div class="question">
+            <label for "who">Who:</label>
+            <input type="text" id="who" name="who" />
+        </div>
+        <div class="question">
+            <label for "date">Date:</label>
+            <input type="text" id="date" name="date" />
+        </div>
+        <div class="question">
+            <label for "note">Note:</label>
+            <input type="text" id="note" name="note" />
+        </div>
+        <br>
+        <div class="type">
+            <label for="type">Chose what to do.</label>
+            <select name="type" id="type">
+                <option value="">Select</option>
+                <option value="GET">GET</option>
+                <option value="POST">POST</option>
+                <option value="PATCH">PATCH</option>
+                <option value="DELETE">DELETE</option>
+            </select>
+        </div>
+        <br>
+        <div class="table">
+            <label for="table">Chose which table.</label>
+            <select name="table" id="table">
+                <option value="test">Select</option>
+                <option value="accounts">Accounts</option>
+                <option value="deposits">Deposits</option>
+            </select>
+        </div>
+        <br>
+        <button type="button" class="submitButton">Submit Request</button>
+        <button type="button" class="clearButton">Empty window</button>
+    </form>
+    <div class="response-area" id="response-area"></div>
+</body>
+
+</html>
