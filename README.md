@@ -1,6 +1,9 @@
 # DB_money-tracker
 Full Stack setup for simple two-table database and the calls to it.
 
+## ERD
+![ERD Showing interconnections](./images/ERD.png)
+
 ## Files
   - .gitignore
     - ignores the node_modules folder when pushing to GitHub
@@ -18,6 +21,6 @@ Full Stack setup for simple two-table database and the calls to it.
   - index.js
     - front end file to add functionality to index.html
   - *.json
-    - list of libraries/configurations needed for everything to work
+    - list of libraries/configurations required
   - README.md
     - this file
