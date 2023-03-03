@@ -1,3 +1,7 @@
+import express from express;
+const app = express();
+app.use(cors());
+
 let $submitButton = $('.submitButton');
 $submitButton.click(function () {
   respondToForm();
@@ -13,16 +17,16 @@ function respondToForm () {
         let searchString;
         if ($('#table').val() == 'deposits' && $('#accountID').val() != '') {
             console.log('accountID: ', $('#accountID').val());
-            searchString = 'http://localhost:8000/api/accounts/' + $('#accountID').val() + '/' + $('#table').val()
+            searchString = '/accounts/' + $('#accountID').val() + '/' + $('#table').val()
         }
         else if ($('#table').val() == 'accounts' && $('#accountID').val() != null) {
-            searchString = 'http://localhost:8000/api/' + $('#table').val()+'/' + $('#accountID').val();
+            searchString = '/api/' + $('#table').val()+'/' + $('#accountID').val();
         }
         else if ($('#table').val() == 'deposits' && $('#depositID').val() != null) {
-            searchString = 'http://localhost:8000/api/' + $('#table').val() + '/' + $('#depositID').val();
+            searchString = '/api/' + $('#table').val() + '/' + $('#depositID').val();
         }
         else {
-            searchString = 'http://localhost:8000/api/' + $('#table').val()
+            searchString = '/api/' + $('#table').val()
         }
         console.log('searchString: ', searchString);
         $.get(searchString, (data) => { 
@@ -32,7 +36,7 @@ function respondToForm () {
     }
     else if ( $('#type').val() == 'POST' ) {
         $.ajax({
-            url: `http://localhost:8000/api/${$('#table').val()}`,
+            url: `/api/${$('#table').val()}`,
             type: 'POST',
             dataType: 'json',
             data: $('#table').val(),

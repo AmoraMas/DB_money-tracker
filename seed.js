@@ -5,8 +5,8 @@ let count = 0;
 
 function checkComplete () {
     count++;
-    if (count == 2) {
-        // close connection
+    if (count >= 2) {
+        // close connection after all inserts are complete
         pool.end();
     }
 }
@@ -24,7 +24,7 @@ pool.query(`SELECT COUNT(*) FROM accounts`, (err, data) => {
                     console.log("Insert failed (accounts)");
                     console.log(err);
                 } else {
-                    console.log(data);
+                    console.log("Insert succeeded (accounts)");
                 }
             }
         );
@@ -51,7 +51,7 @@ pool.query(`SELECT COUNT(*) FROM deposits`, (err, data) => {
                 console.log("Insert failed (deposits)");
                 console.log(err);
             } else {
-                console.log(data);
+                console.log("Insert succeeded (deposits)");
             }
         }
         );
