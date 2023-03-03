@@ -1,6 +1,6 @@
 const { Pool } = require('pg');
 const DATABASE_URL = process.env.DATABASE_URL;
-const pool = require('./dbConn');
+const pool = require('./connDB');
 
 // run migration SQL
 pool.query(`CREATE TABLE IF NOT EXISTS accounts (

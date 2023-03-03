@@ -1,5 +1,5 @@
 const { Pool } = require('pg');
-const pool = require('./dbConn');
+const pool = require('./connDB');
 
 // run seed SQL
 pool.query(`SELECT COUNT(*) FROM accounts`, (err, data) => {
