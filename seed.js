@@ -12,6 +12,7 @@ pool.query(`SELECT COUNT(*) FROM accounts`, (err, data) => {
             (err, data) => {
                 if (err){
                     console.log("Insert failed (accounts)");
+                    console.log(err);
                 } else {
                     console.log(data);
                 }
@@ -37,6 +38,7 @@ pool.query(`SELECT COUNT(*) FROM deposits`, (err, data) => {
         (err, data) => {
             if (err){
                 console.log("Insert failed (deposits)");
+                console.log(err);
             } else {
                 console.log(data);
             }
